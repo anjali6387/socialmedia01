@@ -18,7 +18,7 @@ const AdminDashboard = () => {
           return;
         }
         // Make the API request to fetch users
-        const response = await axios.get('http://localhost:5000/api/users', {
+        const response = await axios.get('https://socialmedia-backend-imw8.onrender.com/api/users', {
             headers: {
               Authorization: `Bearer ${token}`,
             },
