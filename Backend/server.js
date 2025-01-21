@@ -13,7 +13,7 @@ connectDB();
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-app.use('/uploads', express.static('uploads')); // Serve uploaded images
+app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Serve uploaded images
 app.use('/api/users', userRoutes);
 app.use('/api/admin', adminRoute);
 
