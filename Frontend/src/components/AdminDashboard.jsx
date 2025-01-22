@@ -64,13 +64,13 @@ const AdminDashboard = () => {
                         {user.images.map((image, index) => (
                           <div key={index} className="m-2">
                             <a
-                              href={`http://localhost:5000${image}`}
+                              href={`https://socialmedia-backend-imw8.onrender.com${image}`}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="d-block"
                             >
                               <img
-                                src={`http://localhost:5000${image}`}
+                                src={`https://socialmedia-backend-imw8.onrender.com${image}`}
                                 alt={`User Upload ${index}`}
                                 className="img-thumbnail rounded-lg"
                                 style={{

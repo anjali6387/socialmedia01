@@ -11,9 +11,15 @@ dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors({
-    origin: 'http://localhost:5173', // Allow requests from your frontend URL
-  }));
+// Enable CORS for your frontend URL
+const corsOptions = {
+    origin: 'https://socialmedia01-teal.vercel.app', // Allow requests from this URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed HTTP methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
+  };
+  
+  // Apply CORS middleware globally
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Serve uploaded images
 app.use('/api/users', userRoutes);
